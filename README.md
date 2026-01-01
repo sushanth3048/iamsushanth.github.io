@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>IAM Resume</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    body {
+        margin: 0;
+        font-family: "Segoe UI", Arial, sans-serif;
+        background: #f4f7fb;
+        color: #333;
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: 40px auto;
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        padding: 40px;
+        animation: fadeIn 0.8s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(15px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* HEADER */
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid #e6edf5;
+        padding-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 34px;
+        color: #1f4fd8;
+        margin: 0;
+    }
+
+    .title {
+        font-size: 14px;
+        color: #666;
+    }
+
+    .contact {
+        font-size: 14px;
+        text-align: right;
+    }
+
+    .contact a {
+        color: #1f4fd8;
+        text-decoration: none;
+    }
+
+    /* SECTION */
+    .section {
+        margin-top: 30px;
+    }
+
+    .section h2 {
+        font-size: 18px;
+        color: #1f4fd8;
+        border-left: 4px solid #1f4fd8;
+        padding-left: 10px;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .objective {
+        line-height: 1.6;
+        color: #555;
+    }
+
+    /* EXPERIENCE */
+    .company {
+        background: #f9fbff;
+        padding: 14px 18px;
+        border-radius: 10px;
+        margin-bottom: 12px;
+        border: 1px solid #e6edf5;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+
+    .company:hover {
+        background: #eef4ff;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(31,79,216,0.15);
+    }
+
+    .company-name {
+        font-weight: 600;
+        color: #222;
+    }
+
+    .company span {
+        font-size: 13px;
+        color: #777;
+    }
+
+    .responsibilities {
+        display: none;
+        margin-top: 10px;
+        color: #555;
+    }
+
+    .company:hover .responsibilities {
+        display: block;
+        animation: fadeIn 0.4s ease-in-out;
+    }
+
+    ul {
+        padding-left: 18px;
+    }
+
+    ul li {
+        margin-bottom: 6px;
+    }
+
+   /* PROJECTS – HOVER CLEAN VIEW */
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 18px;
+}
+
+.project-card {
+    background: #f9fbff;
+    border-left: 5px solid #1f4fd8;
+    padding: 16px 18px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(31,79,216,0.2);
+    background: #eef4ff;
+}
+
+.project-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1f4fd8;
+    margin-bottom: 4px;
+}
+
+.project-tech {
+    font-size: 13px;
+    color: #555;
+    font-style: italic;
+}
+
+/* Hide bullets initially */
+.project-details {
+    margin-top: 12px;
+    display: none;
+    color: #444;
+}
+
+/* Show bullets on hover */
+.project-card:hover .project-details {
+    display: block;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.project-details ul {
+    padding-left: 18px;
+    margin: 0;
+}
+
+.project-details li {
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+
+    /* EDUCATION */
+    .edu {
+        background: #f9fbff;
+        padding: 14px;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #e6edf5;
+    }
+
+    /* SKILLS */
+    .skills {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 10px;
+    }
+
+    .skill {
+        background: #eef4ff;
+        padding: 10px;
+        border-radius: 6px;
+        text-align: center;
+        font-size: 14px;
+        transition: 0.3s;
+    }
+
+    .skill:hover {
+        background: #1f4fd8;
+        color: #fff;
+        transform: translateY(-2px);
+    }
+
+    footer {
+        text-align: center;
+        font-size: 12px;
+        color: #888;
+        margin-top: 30px;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+        <div>
+            <h1>Sushanth Kummari</h1>
+            <div class="title">Systems Engineer III</div>
+        </div>
+
+        <div class="contact">
+            📞 9951479193<br>
+            🔗 <a href="https://www.linkedin.com/in/sushanth-kng-844b73161/" target="_blank">LinkedIn</a>
+        </div>
+    </div>
+
+    <!-- OBJECTIVE -->
+    <div class="section">
+        <h2>Objective</h2>
+        <p class="objective">
+            Experienced Identity and Access Management (IAM) professional with strong expertise in <b>CyberArk Privileged Access Management, PKI certificate management, and Active Directory / Azure Active Directory (Entra ID)</b>. 
+            Proven experience in automating privileged account onboarding, certificate renewal, and BigFix patch management across on-prem and AWS EC2 environments. 
+            Skilled in designing end-to-end automation workflows using <b>PowerShell and Python</b>, improving security, compliance, and operational efficiency. Adept at implementing least-privilege access, 
+            maintaining audit-ready environments, and collaborating with cross-functional teams to enhance enterprise security posture.
+        </p>
+    </div>
+
+    <!-- EXPERIENCE -->
+    <div class="section">
+        <h2>Professional Experience</h2>
+
+        <div class="company">
+            <div class="company-name">FactSet – Systems Engineer III</div>
+            <span>Duration: May 2023 – Present</span>
+
+            <div class="responsibilities">
+                <ul>
+                    <li>Managed end-to-end daily operations of CyberArk Privileged Access Management (PAM), including onboarding and offboarding of privileged accounts, access approvals, password rotation, reconciliation, and decommissioning across enterprise environments.</li>
+
+                    <li>Troubleshoot CyberArk password failures, reconciliation issues, and login/authentication errors to ensure uninterrupted PAM operations in Production and UAT environments.</li>
+
+                    <li>Performed automated password rotations for local and service accounts on target hosts within CyberArk Production, ensuring compliance with security policies.</li>
+
+                    <li>Collaborated with vendors and internal teams during CyberArk Vault migration activities across UAT and Production environments, ensuring data integrity and minimal downtime.</li>
+
+                    <li>Remediated security vulnerabilities identified on CyberArk infrastructure, strengthening the overall PAM platform security posture.</li>
+
+                    <li>Participated in End-of-Life (EOL) activities for CyberArk servers, ensuring secure decommissioning, credential cleanup, and data protection.</li>
+
+                    <li>Supported CyberArk SOX compliance reviews and audit readiness initiatives by providing evidence, access reports, and configuration documentation.</li>
+
+                    <li>Automated IAM, PAM operations, compliance checks, and patching workflows using PowerShell and Python, significantly reducing manual effort and operational risk.</li>
+
+                    <li>Executed and monitored BigFix patch management activities, including patch deployment, validation, and compliance reporting, to meet internal security and regulatory standards.</li>
+
+                    <li>Performed regular access reviews and compliance audits across CyberArk, Active Directory, Azure Active Directory, and AWS environments.</li>
+
+                    <li>Collaborated with cross-functional stakeholders to design, implement, and enforce identity and access security frameworks across Windows Server, Active Directory, and Azure AD platforms.</li>
+
+                    <li>Administered Active Directory services, including user and group management, service accounts, Group Policy Objects (GPOs), replication, DFSR, and authentication protocols.</li>
+
+                    <li>Supported Azure Active Directory (Entra ID) operations, including hybrid identity management, role-based access control (RBAC), and secure authentication policies.</li>
+
+                    <li>Managed AWS IAM users, roles, and policies to secure cloud workloads and enforce access governance.</li>
+
+                    <li>Administered PKI infrastructure using Venafi, managing certificate lifecycle operations such as discovery, renewal, expiration monitoring, and cryptographic compliance.</li>
+
+                    <li>Maintained comprehensive documentation for PAM configurations, IAM processes, automation scripts, and operational procedures to support audits and knowledge transfer.</li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="company">
+            <div class="company-name">R1 RCM – Systems Engineer </div>
+            <span>Duration: April 2023 – May 2023</span>
+
+            <div class="responsibilities">
+                <ul>
+                    <li>Managed Active Directory and Azure Active Directory (Entra ID) environments, overseeing user access lifecycle, authentication mechanisms, group policies, and security controls to ensure seamless and secure identity management.</li>
+
+                    <li>Developed and enhanced PowerShell automation scripts to streamline administrative and IAM operational tasks, improving efficiency, accuracy, and response times.</li>
+
+                    <li>Built strong expertise in IT infrastructure fundamentals, including networking concepts, cloud services, and security best practices, to support optimized system performance and secure identity integrations.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="company">
+            <div class="company-name">TeamWare Solutions (Microsoft) – Technical Support Engineer</div>
+            <span>Duration: Jan 2022 – Feb 2023</span>
+
+            <div class="responsibilities">
+                <ul>
+                    <li>Assessed, optimized, and enhanced IT infrastructure security, performance, and operational efficiency across enterprise environments.</li>
+
+                    <li>Installed, configured, and troubleshoot software, hardware, and Windows Domain Controllers, ensuring high availability and system stability.</li>
+
+                    <li>Administered Active Directory services, including DNS, domain and forest architecture, trusts, replication, and performance optimization.</li>
+
+                    <li>Diagnosed and resolved authentication and authorization issues involving NTLM, Kerberos, and frequent account lockouts.</li>
+
+                    <li>Created, configured, and troubleshot Group Policy Objects (GPOs) and Fine-Grained Password Policies (FGPPs) to enforce security standards.</li>
+
+                    <li>Upgraded forest and domain functional levels and performed Domain Controller promotion and demotion activities.</li>
+
+                    <li>Resolved Active Directory replication failures, trust relationship issues, and performed stale object and metadata cleanup.</li>
+
+                    <li>Implemented Local Administrator Password Solution (LAPS) to secure local administrator accounts and configured Kerberos delegation (2-hop authentication).</li>
+
+                    <li>Diagnosed and remediated slow logon issues, user profile problems, and cross-site Active Directory replication delays.</li>
+
+                    <li>Provided technical knowledge sharing, incident triaging, root cause analysis, and maintained comprehensive operational documentation.</li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="company">
+            <div class="company-name">JD Sports – Systems Administrator</div>
+            <span>Duration: Oct 2021 – Jan 2022</span>
+
+            <div class="responsibilities">
+                <ul>
+                    <li>Installed, configured, and troubleshot server-class systems, hardware, and software to ensure optimal performance, stability, and availability of IT infrastructure.</li>
+
+                    <li>Administered Active Directory and Microsoft Exchange environments, managing user accounts, groups, policies, and enterprise email services.</li>
+
+                    <li>Streamlined system onboarding and offboarding processes through SCCM-based imaging, deployment, and configuration management.</li>
+
+                    <li>Provided technical support and troubleshooting for authentication and logon issues, application failures, VPN connectivity, and end-user access problems.</li>
+
+                    <li>Maintained standard operating procedures (SOPs), technical documentation, and knowledge base articles to improve operational efficiency and support continuity.</li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="company">
+            <div class="company-name">Pyramind IT (Wipro) – Support Engineer</div>
+            <span>Duration: Apr 2020 – Oct 2021</span>
+
+            <div class="responsibilities">
+                <ul>
+                    <li>Provided end-user technical support for Windows operating systems and Microsoft Office applications, ensuring a smooth and productive user experience.</li>
+
+                    <li>Assisted in the installation, configuration, and maintenance of SCCM infrastructure to support reliable system deployment and performance.</li>
+
+                    <li>Installed, configured, and optimized network cabling, hardware, and software components to improve overall network efficiency and system stability.</li>
+
+                    <li>Managed helpdesk operations by diagnosing and resolving hardware, software, and connectivity issues, ensuring timely incident resolution.</li>
+
+                    <li>Performed regular server backup operations and system maintenance activities to prevent data loss and ensure high system reliability.</li>
+
+                    <li>Conducted user training and provided assistance on software updates, system enhancements, and basic troubleshooting best practices.</li>
+
+                    <li>Handled service requests and incidents within defined SLA timelines, ensuring uninterrupted IT operations and high user satisfaction.</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+<!-- PROJECTS -->
+<div class="section">
+    <h2>Key Projects</h2>
+
+    <div class="projects">
+
+        <div class="project-card">
+            <div class="project-title">
+                Automated CyberArk PAM Bulk Onboarding
+            </div>
+            <div class="project-tech">
+                CyberArk PAM | Safes | Platforms | Policies | PowerShell
+            </div>
+
+            <div class="project-details">
+                <ul>
+                    <li>Automated bulk onboarding of privileged accounts into CyberArk PAM.</li>
+                    <li>Created Safes, assigned platforms, and applied policy configurations using plugins.</li>
+                    <li>Reduced onboarding time and ensured consistent PAM security controls.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-title">
+                PKI Certificate Auto-Renewal & Deployment
+            </div>
+            <div class="project-tech">
+                PKI | Venafi | PowerShell | Email Automation
+            </div>
+
+            <div class="project-details">
+                <ul>
+                    <li>Monitored SSL/TLS certificates and triggered renewal before 20 days of expiry.</li>
+                    <li>Automated certificate deployment to websites with minimal downtime.</li>
+                    <li>Implemented email alerts for success, failure, and expiry notifications.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-title">
+                Automated BigFix Patching – AWS EC2
+            </div>
+            <div class="project-tech">
+                AWS EC2 | BigFix | Patch Management | Automation
+            </div>
+
+            <div class="project-details">
+                <ul>
+                    <li>Discovered EC2 instances from onboarded AWS accounts and installed BigFix client.</li>
+                    <li>Implemented full automation flow: Maintenance Mode → VIP → Patch → Validation.</li>
+                    <li>Installed software during Maintenance Mode to ensure zero production impact.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-title">
+                End-to-End Patch Orchestration – On-Prem Servers
+            </div>
+            <div class="project-tech">
+                BigFix | Windows Server | PowerShell
+            </div>
+
+            <div class="project-details">
+                <ul>
+                    <li>Automated patching workflow with pre and post-patch validations.</li>
+                    <li>Enabled Maintenance Mode and VIP handling to avoid service disruption.</li>
+                    <li>Improved patch compliance and reduced manual effort.</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+    <!-- EDUCATION -->
+    <div class="section">
+        <h2>Education</h2>
+
+        <div class="edu">
+            <b>University of Hyderabad</b> – Post Graduate Diploma in Project Management <br>
+            <span>Passout Year: 2021</span>
+        </div>
+
+        <div class="edu">
+            <b>CMR Institute of Technology</b> – BTech in Electonics and Computer Engineering <br>
+            <span>Passout Year: 2019</span>
+        </div>
+
+        <div class="edu">
+            <b>GMR Polytechnic Gajwel</b> – Diploma in Electonics and Computer Engineering <br>
+            <span>Passout Year: 2016</span>
+        </div>
+    </div>
+
+    <!-- TECHNICAL SKILLS -->
+    <div class="section">
+        <h2>Technical Skills</h2>
+        <div class="skills">
+             <div class="skill">CyberArk PAM (Vault, PVWA, CPM, PSM, CP/CCP, Safe Management, LDAP, PTA, AIM)</div>
+
+            <div class="skill">PKI / Venafi (Certificate Lifecycle, Renewal, Compliance)</div>
+
+            <div class="skill">Identity & Access Management (Azure AD, AAD Connect, GPO, LAPS, IAM Lifecycle, Access Controls)</div>
+
+            <div class="skill">Active Directory & Windows Server (2012 R2–2022, DFSR, Authentication, GPOs)</div>
+
+            <div class="skill">Infrastructure & Security (SQL, Web Servers, OS Troubleshooting, Security Hardening)</div>
+
+            <div class="skill">Cloud & Automation (Azure, AWS, PowerShell, Python, REST APIs)</div>
+
+            <div class="skill">Privileged Account Automation (Onboarding, Offboarding, Rotation)</div>
+
+            <div class="skill">Monitoring & Auditing (Splunk, Grafana, System Audits)</div>
+
+            <div class="skill">Patch Management (BigFix, Compliance Reporting)</div>
+
+            <div class="skill">ITSM & Process (ServiceNow, Remedy, ITIL, Incident & Change Management)</div>
+            
+        </div>
+    </div>
+
+    <!-- SOFT SKILLS -->
+    <div class="section">
+        <h2>Soft Skills</h2>
+        <div class="skills">
+            <div class="skill">Security Mindset</div>
+            <div class="skill">Proactive & Innovative Thinking</div>
+            <div class="skill">Problem Solving & Root Cause Analysis</div>
+            <div class="skill">Automation & Process Optimization</div>
+            <div class="skill">Incident & Crisis Management</div>
+            <div class="skill">Team Collaboration & Stakeholder Management</div>
+            <div class="skill">Exploratory & Continuous Learning</div>
+            <div class="skill">Documentation, Compliance & Audits</div>
+
+        </div>
+    </div>
+
+    <footer>
+        © Resume | CyberArk - Identity and Access Management
+    </footer>
+
+</div>
+
+</body>
+</html>
+
